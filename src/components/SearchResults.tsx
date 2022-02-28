@@ -5,11 +5,12 @@ type SearchResultProps = {
     results: Array<{
         id: number,
         price: number,
-        title: string
-    }>
+        title: string,
+    }>,
+    onAddToWishList: (id: number) => void,
 }
 
-export function SearchResults({ results }: SearchResultProps) {
+export function SearchResults({ results, onAddToWishList }: SearchResultProps) {
     const totalPrice = useMemo(() => {
         return results.reduce((total, product) => {
             return total + product.price;
@@ -22,7 +23,11 @@ export function SearchResults({ results }: SearchResultProps) {
 
             {results.map(product => {
                 return (
-                    <ProductItem key={product.id} product={product} />
+                    <ProductItem 
+                        key={product.id} 
+                        product={product} 
+                        onAddToWishList={onAddToWishList} 
+                    />
                 )
             })}
         </div>
