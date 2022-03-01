@@ -24,6 +24,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - NextJS
 - JSON Server
 - React Virtualized
+- Bundle Analyzer
+- Cross-env
 
 ## 🚀 Uso
 
